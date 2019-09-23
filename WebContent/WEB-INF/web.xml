@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><!--xml파일이라고 한다  -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JavaScriptProgramming</display-name><!--지워도 상관없다  -->
+  <welcome-file-list><!--웰컴 파일도 삭제해도 무난하다 기본적으로 index를 찾는다  -->
+    <welcome-file>index.html</welcome-file><!--이 순서대로 찾는다  -->
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>home.html</welcome-file>
+  </welcome-file-list>
+</web-app>
