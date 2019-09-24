@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		//함수 선언	
+		function fun1(){//함수를 선언할때function
+				console.log("fun1() 호출");
+				
+			}
+			
+			var fun2 = function(){//변수 선언//fun1이 들어가면 똑같은것이다
+				
+				console.log("fun2() 호출");
+			};
+			
+		//함수 호출
+		fun1();
+		fun2();
+		
+		var fun3 = fun1;
+		fun3();
+		
+		//함수 선언
+		function fun4(x, y) {
+			var result = x + y;
+			console.log(result);
+		}
+		
+		//함수 호출
+		fun4(3, 5);
+		
+		//함수 선언
+		function fun5(x, y) {
+			var result = x + y;
+			return result;//이러면 리턴 값이 있는거다
+		}
+		
+		//함수 호출
+		var rst = fun5(3, 5);
+		console.log(rst);
+		
+		
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

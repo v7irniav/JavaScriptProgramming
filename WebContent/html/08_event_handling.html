@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//fun1();//실행하는 순서가 위에서 아래인데 선언전에 실행하면 에러가 난다
+
+	function fun1() {
+		console.log("Hello JavaScript");
+	}
+	function fun2() {
+		var x = 10;
+		var y = 20;
+		var result = x + y;
+		console.log("result : " + result);
+	}
+
+	function fun3() {
+		//~
+		return true;
+	}
+
+	function fun4() {
+		console.log("마우스가 그림 위에 있습니다.")
+
+	}
+
+	function fun5() {
+		console.log("마우스가 그림 밖에 있습니다.")
+
+	}
+</script>
+</head>
+<body>
+	<button onclick="fun1()">fun1() 호출</button>
+	<br />
+	<button onclick="fun2()">fun2() 호출</button>
+	<br />
+	<a href="javascript:fun1()">
+		<!--a테그는 모양이 없다 그러므로 모양을 만들수 있다.  --> <!-- 클릭을 하면 javascript에 fun1()을 실행하겠다 -->
+		<img src="../common/image/icon01.png" />
+	</a>
+	<br />
+
+	<a href="http://www.apache.org" onclick="return fun3()">아파치</a>
+	<br />
+	<!--네이버는 아이프레임에서 못 열리게 되어 있다.  -->
+
+	<form action="http://www.apache.org" onsubmit="return fun3()">
+		<!--onsubmit는 submit을 클릭을 했을때 -->
+		<!--폼테그는 회원가입 로그인 주문 다양한 사용자의 입력을 받아서 이동하는것  -->
+		<input type="submit" value="이동" />
+	</form>
+
+	<br />
+
+
+	<img src="../common/image/Desert.jpg" width="300" onmouseenter="fun4()" onmouseleave="fun5()" />
+	<!--on으로 시작하는건 이벤트  -->
+	<!--엔터는 경계 안으로 들어간다 경계박으로 나가면 리브  -->
+
+</body>
+</html>

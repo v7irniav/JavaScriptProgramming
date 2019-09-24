@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<script type="text/javascript">
+			//전역 변수 var가 있던 없던이렇게 선언되는것을 다 전역 변수라고 한다
+			//전체에서 사용가능한것
+			var var1 =10;
+			var2 = 20;
+			
+			//함수 선언
+			function fun1() {//function은 함수를 선언하겠다 fun1이 함수 이름//자바 스크립트는 리턴타입이 없다
+				//로컬 변수//{} 중가로 안에 선언된 함수를 로컬 변수라고 한다
+				//실행한 코드를 정의 한것이므로 실행하려면 함수를 호출 해야 된다.
+				var var3 = 30;
+				
+				
+				//전역변수
+				var4 = 40;
+				
+				console.log("var1 :" +  var1);
+				console.log("var2 :" +  var2);
+				console.log("var3 :" +  var3);
+				console.log("var4 :" +  var4);	
+			}
+			
+			function fun2() {
+				
+				console.log("var1 :" +  var1);
+				console.log("var2 :" +  var2);
+				//console.log("var3 :" +  var3);//fun1 메소드에 정의되어 있어서 벗어나면 실행할수 없다
+				console.log("var4 :" +  var4);//var없이 선언해서 전역변수이므로 fun2에서도 된다
+			}
+			
+			//함수 호출
+			fun1();
+			fun2();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

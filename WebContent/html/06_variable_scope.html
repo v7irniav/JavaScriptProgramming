@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var var1 = 10;//전역변수
+		
+			function fun1(){
+				var var2 = 20;//로컬변수
+			
+				if(true){//함수레벨의 로컬변수는 있으되 블록 레벨의 로컬 변수는 없다 
+					//로컬 변수
+					var var3 = 30;
+					console.log("var1 :" +  var1);
+					console.log("var2 :" +  var2);
+					console.log("var3 :" +  var3);
+					
+				}
+				console.log("var1 :" +  var1);
+				console.log("var2 :" +  var2);
+				console.log("var3 :" +  var3);
+				
+		}
+			
+			fun1();//호출
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

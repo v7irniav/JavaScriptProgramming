@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var car = null;
+			
+			function fun1(){
+				 car = {/*var를 빼버리면 전역변수가 된다.  */
+					model: "그랜저",/*프로퍼티(필드) 이다 */
+					company: "현대자동차",
+					color: "흰색",
+					speed: 0,
+					start : function(){
+						console.log("시동을 겁니다.");
+					},
+					setSpeed: function(speed){/*매게 변수 이름이 s로 들어와도 무조건 붙여야 한다.  */
+						this.speed = speed;
+					},
+					info:function(){
+						console.log(this.model + ":" + this.color);/*프로퍼티를 사용하려면 무조건 this가 붙어야 한다  */
+					},
+					stop: function(){
+						this.setSpeed(0);/*자신의 메소드를 호출할때 this가 있어야 한다  */
+						console.log("멈춥니다.");
+					}
+				};
+				//필드 접근하는 방법
+				console.log(car.model);
+				car.speed = 60;/*카가 가지고 있는 프로퍼티의 스피드를 60으로 바꿔라  */	
+				console.log(car.speed);
+				
+				
+				//메소드 호출하는 방법
+				car.info();
+				car.start();
+				car.setSpeed(100);
+				car.stop();
+			}
+			
+			function fun2(){
+				if(car == null) return;/*리턴의 값이 없으면 실행을 끝낸다  */
+				var json = JSON.stringify(car);
+				console.log(json);
+			}
+			
+			function fun3(){
+				var json = '{"model":"그랜저","company":"현대자동차","color":"흰색","speed":0}';
+				//순서는 상관 없다 대신 이름과 값은 순서대로 들어와야 한다 "이름":"값" 
+				/* json 에서 필드 이름은 ""을 반드시 붙여서  사용해야 한다 */
+				var car = JSON.parse(json);//많이 쓰는 데이터 포맷은 json이다
+				console.log(car);
+				console.log(car.model);
+				console.log(car.company);
+			}
+			
+			function fun4(){
+				var member = {
+					name: "홍길동",
+					age: 20,
+					car: {model:"포르쉐", color:"빨강"},
+					hobby:["영화감상", "코딩", "여행"]
+					
+				};
+				var json = JSON.stringify(member);
+				console.log(json);
+				
+				var member2  = JSON.parse(json);
+				console.log(member2.name);
+				console.log(member2.car.model);
+				console.log(member2.hobby[1]);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="fun1()">객체 생성 및 사용</button> <br/>
+		<button onclick="fun2()">객체를 문자열로 변환</button> <br/>
+		<button onclick="fun3()">문자열을 객체로 변환</button> <br/>
+		<button onclick="fun4()">여러 타입을 속성으로 가지는 객체</button> <br/>
+	</body>
+</html>
