@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="../common/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+		function fun1() {
+			var img1 = $("#img1");//이것이 제이쿼리에서 파일을 찾는법
+			img1.attr("src", "../common/image/Lighthouse.jpg");
+			
+		}
+		
+		function fun2() {
+			var img2 = $(".img2");//이것이 제이쿼리에서 파일을 찾는법
+			img2.attr("src", "../common/image/Jellyfish.jpg");
+			
+		}
+		
+		function fun3() {
+			var imgList = $("img");//이것이 제이쿼리에서 파일을 찾는법
+			imgList.attr("src", "../common/image/Tulips.jpg");
+			
+		}
+		function fun4(){
+			$("#div1 img").attr("src", "../common/image/Chrysanthemum.jpg");//하나이상을 찾는거니까		
+		}
+		
+		function fun5() {
+            var inputMid = $("#joinForm input[name=mid]");
+            console.log(inputMid.val());
+            
+            var inputPass = $("#joinForm input[name=mpassword]");
+            var password = inputPass.val();
+            if(password == ""){//패스워드가 입력 안됫을때
+            	window.alert("패스워드 안 넣을래?");	            	
+            }else{
+            	if(password.length < 8){//패스워드의 길이가 8보다 적을시에는
+            		window.alert("패스워드 똑 바로 안 넣을래?");
+            	}       	   
+            }
+            
+          var inputHobby = $("#joinForm input[name=hobby]");
+            var inputHobbyChecked = $("#joinForm input[name=hobby]:checked");
+             for(var i=0; i<inputHobbyChecked.length; i++){
+            	console.log(inputHobbyChecked[i].value);
+            } 
+ /*            console.log(inputHobbyChecked.val());//val은 하나만 벨류값을 얻는것이다 */
+             
+         }
+		
+		</script>
+		
+	</head>
+	<body>
+		<button onclick="fun1()">아이디로 찾기</button><br/>
+		<button onclick="fun2()">클래스로 찾기</button><br/>
+		<button onclick="fun3()">태그명으로 찾기</button><br/>
+		<button onclick="fun4()">내부 찾기</button><br/>
+		<button onclick="fun5()">폼 양식 찾기</button><br/>
+		<hr/>
+		
+		<img id="img1" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		<div id="div1">
+			<img src="../common/image/Desert.jpg" width="200"/>
+			<img src="../common/image/Desert.jpg" width="200"/>	
+		</div>
+		
+		<br/>
+		
+		<form id="joinForm" name="joinForm"><!--아이디는 문서 전체의 하나여야 하고 네임은 여러개여도 되는데 왠만해선 중복으로 주지 않는다.  -->
+			아이디 : <input name="mid" type="text" value="fall"/><br/>
+			비번 : <input name="mpassword" type="password"/><br/>
+			취미 :
+				 <input name="hobby" type="checkbox" value="movie"/>영화<!--벨류 값을 미리 저장해야된다.  -->
+				 <input name="hobby" type="checkbox" value="trip"/>여행
+				 <input name="hobby" type="checkbox" value="coding"/>코딩<br/>
+		</form>
+	</body>
+</html>
