@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function fun1() {
+					var img1 = document.getElementById("img1");//window는 생략 가능
+					img1.src = "../common/image/Lighthouse.jpg";
+				}
+				
+			function fun2(){
+					var imgList = document.getElementsByClassName("img2");
+					for(var i = 0; i<imgList.length; i++){
+						imgList[i].src = "../common/image/Koala.jpg";
+						
+					}
+			}
+			function fun3(){
+				var imgList = document.getElementsByTagName("img");
+				for(var i = 0; i<imgList.length; i++){
+					imgList[i].src = "../common/image/Tulips.jpg";
+				}
+		}
+			function fun4(){
+				var imgList = document.querySelectorAll("#div1 img");//하나이상을 찾는거니까
+				for(var i = 0; i<imgList.length; i++){
+					imgList[i].src = "../common/image/Chrysanthemum.jpg";
+				}
+			
+			}
+			function fun5() {
+	            var inputMid = document.querySelector("#joinForm input[name=mid]");
+	            console.log(inputMid.value);
+	            
+	            var inputPass = document.querySelector("#joinForm input[name=mpassword]");
+	            var password = inputPass.value;
+	            if(password == ""){//패스워드가 입력 안됫을때
+	            	window.alert("패스워드 안 넣을래?");	            	
+	            }else{
+	            	if(password.length < 8){//패스워드의 길이가 8보다 적을시에는
+	            		window.alert("패스워드 똑 바로 안 넣을래?");
+	            	}       	   
+	            }
+	            
+	            var inputHobby = document.querySelectorAll("#joinForm input[name=hobby]");
+	            var inputHobbyChecked = document.querySelectorAll("#joinForm input[name=hobby]:checked");
+	            for(var i=0; i<inputHobbyChecked.length; i++){
+	            	console.log(inputHobbyChecked[i].value);
+	            	
+	            }
+	         }//이거 녹화 1:07:00부터
+	         
+	        function fun6() {
+				var form = document.joinForm;
+				
+				var mid = document.joinForm.mid.value;	
+				console.log("mid " + mid);
+				
+				var mpassword = document.joinForm.mpassword.value
+				console.log("mapssword : " + mapssword); //단순한 값을 가져올때는 이렇게 가능하다
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="fun1()">아이디로 찾기</button><br/>
+		<button onclick="fun2()">클래스로 찾기</button><br/>
+		<button onclick="fun3()">태그명으로 찾기</button><br/>
+		<button onclick="fun4()">내부 찾기</button><br/>
+		<button onclick="fun5()">폼 양식 찾기</button><br/>
+		<button onclick="fun6()">폼 양식 찾기</button><br/>
+		<hr/>
+		
+		<img id="img1" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		<div id="div1">
+			<img src="../common/image/Desert.jpg" width="200"/>
+			<img src="../common/image/Desert.jpg" width="200"/>	
+		</div>
+		
+		<br/>
+		
+		<form id="joinForm" name="joinForm"><!--아이디는 문서 전체의 하나여야 하고 네임은 여러개여도 되는데 왠만해선 중복으로 주지 않는다.  -->
+			아이디 : <input name="mid" type="text" value="fall"/><br/>
+			비번 : <input name="mpassword" type="password"/><br/>
+			취미 :
+				 <input name="hobby" type="checkbox" value="movie"/>영화<!--벨류 값을 미리 저장해야된다.  -->
+				 <input name="hobby" type="checkbox" value="trip"/>여행
+				 <input name="hobby" type="checkbox" value="coding"/>코딩<br/>
+		</form>
+	</body>
+</html>

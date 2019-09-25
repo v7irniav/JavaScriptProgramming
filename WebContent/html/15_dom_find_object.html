@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function fun1() {
+					var img1 = document.querySelector("#img1");//window는 생략 가능//()안에 들어가는것은 선택자 이다
+					img1.src = "../common/image/Lighthouse.jpg";
+				}
+				
+			function fun2(){
+					var imgList = document.querySelectorAll(".img2");/*  querySelectorAll는 전부다 찾아와라*/
+					for(var i = 0; i<imgList.length; i++){
+						imgList[i].src = "../common/image/Koala.jpg";
+						
+					}
+			}
+			function fun3(){
+				var imgList = document.querySelectorAll("img");
+				for(var i = 0; i<imgList.length; i++){
+					imgList[i].src = "../common/image/Tulips.jpg";
+					
+				}
+			}
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<button onclick="fun1()">아이디로 찾기</button><br/>
+		<button onclick="fun2()">클래스로 찾기</button><br/>
+		<button onclick="fun3()">태그명으로 찾기</button><br/>
+		
+		<hr/>
+		
+		<img id="img1" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		<img class="img2" src="../common/image/Desert.jpg" width="200"/>
+		
+		<br/>
+		
+		
+		
+	</body>
+</html>
